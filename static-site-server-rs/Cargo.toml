@@ -1,0 +1,15 @@
+[package]
+name = "static-site-server-rs"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anyhow = "1.0"
+axum = "0.7"
+dotenvy = "0.15"
+futures-util = "0.3"
+redis = { version = "0.25", features = ["aio", "tokio-comp", "connection-manager"] }
+reqwest = { version = "0.12", default-features = false, features = ["rustls-tls", "stream", "gzip", "brotli", "deflate"] }
+tokio = { version = "1.35", features = ["macros", "rt-multi-thread"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "fmt"] }
